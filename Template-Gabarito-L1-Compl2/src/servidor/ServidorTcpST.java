@@ -21,11 +21,11 @@ public class ServidorTcpST {
             s = welcomeSocket.accept();
             in = new DataInputStream(s.getInputStream());
             out = new DataOutputStream(s.getOutputStream());
-
+            
             String request = getRequest();
             String response = processRequest(request);
             sendResponse(response);
-
+            
             in.close();
             out.close();
             s.close();
